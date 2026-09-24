@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajahi Keindahan Swiss | Panduan & Perencana Wisata Alpine Impian</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        swiss: {
+                            red: '#D52B1E',
+                            darkRed: '#B01B10',
+                            lightRed: '#FFECEB',
+                            dark: '#0F172A',
+                            slate: '#1E293B',
+                            gold: '#D97706',
+                            ice: '#F0F9FF',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-swiss-red selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="glass-panel rounded-2xl px-5 py-3 flex items-center justify-between shadow-lg shadow-slate-900/5">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 bg-swiss-red rounded-xl flex items-center justify-center shadow-md shadow-swiss-red/30 transition-transform group-hover:scale-105">
+                        <!-- Swiss Cross SVG -->
+                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="10" y="4" width="4" height="16" rx="1"/>
+                            <rect x="4" y="10" width="16" height="4" rx="1"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg text-slate-900 tracking-tight block leading-none">SWISS<span class="text-swiss-red">VISIT</span></span>
+                        <span class="text-[10px] text-slate-500 font-medium tracking-widest uppercase block mt-0.5">Jelajahi Surga Alpine</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700">
+                    <a href="#destinasi" class="hover:text-swiss-red transition-colors">Destinasi</a>
+                    <a href="#kereta" class="hover:text-swiss-red transition-colors">Kereta Panorama</a>
+                    <a href="#swiss-pass" class="hover:text-swiss-red transition-colors">Swiss Travel Pass</a>
+                    <a href="#itinerary" class="hover:text-swiss-red transition-colors">Itinerary Builder</a>
+                    <a href="#anggaran" class="hover:text-swiss-red transition-colors">Kalkulator Anggaran</a>
+                    <a href="#cuaca" class="hover:text-swiss-red transition-colors">Cuaca Alpine</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <div class="bg-slate-100 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 flex items-center space-x-1.5 border border-slate-200">
+                        <i class="fa-solid font-bold text-swiss-red fa-coins"></i>
+                        <span>1 CHF = Rp <span id="nav-fx-rate">18,200</span></span>
+                    </div>
+                    <button onclick="openConsultationModal()" class="bg-swiss-red hover:bg-swiss-darkRed text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md shadow-swiss-red/20 transition-all hover:shadow-lg hover:-translate-y-0.5 flex items-center space-x-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Konsultasi Gratis</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden text-slate-700 p-2 rounded-lg hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden px-4 pt-2 pb-4">
+            <div class="glass-panel rounded-2xl p-5 space-y-3 shadow-xl">
+                <a href="#destinasi" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold border-b border-slate-100">Destinasi Populer</a>
+                <a href="#kereta" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold border-b border-slate-100">Kereta Panorama</a>
+                <a href="#swiss-pass" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold border-b border-slate-100">Swiss Travel Pass</a>
+                <a href="#itinerary" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold border-b border-slate-100">Itinerary Builder</a>
+                <a href="#anggaran" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold border-b border-slate-100">Kalkulator Anggaran</a>
+                <a href="#cuaca" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 font-semibold border-b border-slate-100">Cuaca Puncak</a>
+                <button onclick="openConsultationModal(); toggleMobileMenu();" class="w-full mt-2 bg-swiss-red text-white py-3 rounded-xl font-bold text-center">
+                    Konsultasi Perjalanan
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Swiss Alps Panorama" 
+                 class="w-full h-full object-cover object-center transform scale-105 animate-pulse" 
+                 style="animation-duration: 20s;"
+                 onerror="this.src='https://placehold.co/1920x1080/0f172a/ffffff?text=Swiss+Alps+Panorama'">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-slate-900/30"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8 mt-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white text-xs sm:text-sm font-medium shadow-xl">
+                <span class="w-2 h-2 rounded-full bg-swiss-red animate-ping"></span>
+                <span>Panduan Resmi & Terlengkap Wisata Swiss dalam Bahasa Indonesia</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight">
+                Jelajahi Surga Alpine <br class="hidden sm:inline">
+                <span class="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-red-200 via-white to-red-300">Impian Terindah Anda</span>
+            </h1>
+
+            <p class="text-slate-200 text-base sm:text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
+                Nikmati pesona desa tanpa mobil, puncak bersalju abadi, danau biru kristal, serta perjalanan kereta panorama paling spektakuler di dunia.
+            </p>
+
+            <!-- Search & Quick Filter Bar -->
+            <div class="max-w-3xl mx-auto">
+                <div class="glass-panel p-2.5 sm:p-3 rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col sm:flex-row items-center gap-2">
+                    <div class="relative w-full flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="hero-search-input" onkeyup="handleHeroSearch()" placeholder="Cari destinasi (misal: Zermatt, Matterhorn, Jungfrau)..." 
+                               class="w-full pl-11 pr-4 py-3 bg-white/70 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-swiss-red transition-all placeholder:text-slate-400">
+                    </div>
+                    <a href="#destinasi" class="w-full sm:w-auto bg-swiss-red hover:bg-swiss-darkRed text-white font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-swiss-red/30 flex items-center justify-center space-x-2 text-sm whitespace-nowrap">
+                        <span>Cari Destinasi</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Swiss Stat Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 pt-6 max-w-4xl mx-auto">
+                <div class="glass-dark p-4 rounded-2xl text-center border border-white/10 hover:border-swiss-red/50 transition-colors">
+                    <div class="text-swiss-red font-extrabold text-2xl sm:text-3xl font-serif">208+</div>
+                    <div class="text-slate-300 text-xs sm:text-sm font-medium mt-1">Gunung &gt;3.000m</div>
+                </div>
+                <div class="glass-dark p-4 rounded-2xl text-center border border-white/10 hover:border-swiss-red/50 transition-colors">
+                    <div class="text-swiss-red font-extrabold text-2xl sm:text-3xl font-serif">1.500+</div>
+                    <div class="text-slate-300 text-xs sm:text-sm font-medium mt-1">Danau Alami</div>
+                </div>
+                <div class="glass-dark p-4 rounded-2xl text-center border border-white/10 hover:border-swiss-red/50 transition-colors">
+                    <div class="text-swiss-red font-extrabold text-2xl sm:text-3xl font-serif">4 Utama</div>
+                    <div class="text-slate-300 text-xs sm:text-sm font-medium mt-1">Kereta Panorama Iconic</div>
+                </div>
+                <div class="glass-dark p-4 rounded-2xl text-center border border-white/10 hover:border-swiss-red/50 transition-colors">
+                    <div class="text-swiss-red font-extrabold text-2xl sm:text-3xl font-serif">100%</div>
+                    <div class="text-slate-300 text-xs sm:text-sm font-medium mt-1">Energi Terbarukan Train</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#destinasi" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 hover:text-white transition-colors animate-bounce flex flex-col items-center space-y-1">
+            <span class="text-xs uppercase tracking-widest font-semibold">Gulir Ke Bawah</span>
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+        </a>
+    </section>
+
+    <!-- Top Destinations Grid Section -->
+    <section id="destinasi" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-12">
+            <div class="inline-flex items-center space-x-2 bg-swiss-lightRed text-swiss-red px-3.5 py-1.5 rounded-full text-xs font-extrabold tracking-wide uppercase">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Destinasi Unggulan</span>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+                Destinasi Terpopuler di Swiss
+            </h2>
+            <p class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+                Temukan keajaiban alam dari puncak ikonis Matterhorn hingga lembah 72 air terjun di Lauterbrunnen.
+            </p>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 pt-4" id="destination-filters">
+                <button onclick="filterDestinations('all')" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-swiss-red text-white shadow-md shadow-swiss-red/20">
+                    Semua Destinasi
+                </button>
+                <button onclick="filterDestinations('alpine')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition-all">
+                     Alpine & Ski
+                </button>
+                <button onclick="filterDestinations('lakes')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition-all">
+                     Danau & Kota
+                </button>
+                <button onclick="filterDestinations('scenic')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition-all">
+                     Rute Kereta Express
+                </button>
+                <button onclick="filterDestinations('culture')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition-all">
+                     Budaya & Kuliner
+                </button>
+            </div>
+        </div>
+
+        <!-- Destinations Container Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="destinations-grid">
+            <!-- Dynamic Injection via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Destination Detail Modal -->
+    <div id="dest-modal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar shadow-2xl relative border border-slate-100">
+            <!-- Modal Close Button -->
+            <button onclick="closeDestModal()" class="absolute top-4 right-4 z-10 bg-black/40 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Modal Content Header Banner -->
+            <div class="relative h-72 sm:h-80 w-full overflow-hidden">
+                <img id="modal-img" src="" alt="Destination" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6 text-white space-y-2">
+                    <span id="modal-category" class="bg-swiss-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Alpine
+                    </span>
+                    <h3 id="modal-title" class="text-3xl sm:text-4xl font-extrabold font-serif">Zermatt & Matterhorn</h3>
+                    <p id="modal-subtitle" class="text-slate-300 text-sm flex items-center space-x-2">
+                        <i class="fa-solid fa-location-dot text-swiss-red"></i>
+                        <span>Canton Valais, Switzerland</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 sm:p-8 space-y-6">
+                <!-- Overview -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Deskripsi Singkat</h4>
+                    <p id="modal-desc" class="text-slate-700 leading-relaxed text-sm sm:text-base">
+                        Deskripsi rinci destinasi.
+                    </p>
+                </div>
+
+                <!-- Info Badges Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                    <div>
+                        <span class="text-xs text-slate-400 font-medium block">Waktu Terbaik</span>
+                        <span id="modal-best-time" class="text-sm font-bold text-slate-800">Mei - Oktober</span>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400 font-medium block">Aksesibilitas</span>
+                        <span id="modal-access" class="text-sm font-bold text-slate-800">Bebas Mobil (Car-free)</span>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400 font-medium block">Tingkat Biaya</span>
+                        <span id="modal-cost" class="text-sm font-bold text-swiss-red">CHF 120 - 250 / hari</span>
+                    </div>
+                </div>
+
+                <!-- Highlights List -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Atraksi Utama & Aktivitas</h4>
+                    <ul id="modal-highlights" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700">
+                        <!-- Injected -->
+                    </ul>
+                </div>
+
+                <!-- Cable Car & Travel Tip -->
+                <div class="bg-amber-50 border border-amber-200 p-4 rounded-2xl flex items-start space-x-3">
+                    <i class="fa-solid fa-lightbulb text-amber-600 text-xl mt-0.5"></i>
+                    <div>
+                        <h5 class="text-xs font-bold text-amber-900 uppercase">Tips Perjalanan Local & Kereta Gantung</h5>
+                        <p id="modal-tip" class="text-xs sm:text-sm text-amber-800 mt-1">
+                            Gunakan Swiss Travel Pass untuk diskon hingga 50% tiket kereta gantung Gornergrat Bahn.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Modal Actions -->
+                <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                    <button onclick="closeDestModal(); openConsultationModal();" class="flex-1 bg-swiss-red hover:bg-swiss-darkRed text-white py-3 px-6 rounded-xl font-bold text-center text-sm shadow-md shadow-swiss-red/20 transition-all">
+                        Rencanakan Perjalanan ke Sini
+                    </button>
+                    <button onclick="closeDestModal()" class="py-3 px-6 rounded-xl font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 text-sm transition-colors">
+                        Tutup
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scenic Trains Section -->
+    <section id="kereta" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Subtle Glow Effect -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-swiss-red/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+            <div class="text-center space-y-4">
+                <div class="inline-flex items-center space-x-2 bg-white/10 text-slate-200 px-3.5 py-1.5 rounded-full text-xs font-extrabold tracking-wide uppercase border border-white/10">
+                    <i class="fa-solid fa-train text-swiss-red"></i>
+                    <span>Pengalaman Kereta Panorama Terbaik</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                    Jalur Kereta Scenic Terindah
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    Sistem kereta api Swiss adalah yang terbaik di dunia. Rasakan perjalanan melintasi jembatan batu, terowongan alpine, dan danau bening.
+                </p>
+            </div>
+
+            <!-- Train Selector Tabs -->
+            <div class="flex justify-center space-x-2 sm:space-x-4 border-b border-slate-800 pb-4 overflow-x-auto custom-scrollbar" id="train-tabs">
+                <button onclick="selectTrain('glacier')" id="tab-glacier" class="train-tab-btn active px-5 py-3 rounded-xl font-bold text-sm transition-all bg-swiss-red text-white flex items-center space-x-2 whitespace-nowrap">
+                    <i class="fa-solid fa-snowflake"></i>
+                    <span>Glacier Express</span>
+                </button>
+                <button onclick="selectTrain('bernina')" id="tab-bernina" class="train-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700 flex items-center space-x-2 whitespace-nowrap">
+                    <i class="fa-solid fa-mountain text-red-400"></i>
+                    <span>Bernina Express</span>
+                </button>
+                <button onclick="selectTrain('goldenpass')" id="tab-goldenpass" class="train-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700 flex items-center space-x-2 whitespace-nowrap">
+                    <i class="fa-solid fa-sun text-amber-400"></i>
+                    <span>GoldenPass Express</span>
+                </button>
+            </div>
+
+            <!-- Active Train Details Showcase Container -->
+            <div class="glass-dark rounded-3xl p-6 sm:p-10 border border-white/10 shadow-2xl" id="train-display-card">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Swiss Travel Pass Calculator Section -->
+    <section id="swiss-pass" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Info Banner -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-swiss-lightRed text-swiss-red px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span>Satu Tiket Untuk Semua</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Kalkulator Resmi Swiss Travel Pass
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Swiss Travel Pass memberi Anda akses tak terbatas ke seluruh jaringan kereta, bus, dan kapal panorama di Swiss, ditambah akses masuk gratis ke 500+ museum!
+                </p>
+
+                <!-- Pass Perks Checklist -->
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-700">Perjalanan tak terbatas dengan kereta SBB, bus PostBus &amp; kapal danau.</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-700">Gratis masuk ke 500+ museum populer (termasuk Kastil Chillon).</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-700">Diskon hingga 50% untuk eksekusi kereta gantung gunung (Mt. Titlis, Jungfraujoch).</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-700">Anak di bawah 16 tahun GRATIS dengan Swiss Family Card.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Interactive Form & Live Estimator Card -->
+            <div class="lg:col-span-7">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200/80 space-y-6">
+                    <h3 class="text-xl font-bold text-slate-900 pb-2 border-b border-slate-100 flex items-center justify-between">
+                        <span>Hitung Estimasi Biaya Pass Anda</span>
+                        <i class="fa-solid fa-calculator text-swiss-red"></i>
+                    </h3>
+
+                    <!-- Duration Option -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Pilih Durasi Hari Consecutive</label>
+                        <div class="grid grid-cols-4 gap-2" id="pass-days-btn-group">
+                            <button onclick="setPassDays(3)" class="pass-day-btn px-3 py-2.5 rounded-xl border border-slate-200 font-bold text-sm text-slate-700 hover:border-swiss-red active transition-all">3 Hari</button>
+                            <button onclick="setPassDays(4)" class="pass-day-btn px-3 py-2.5 rounded-xl border border-slate-200 font-bold text-sm text-slate-700 hover:border-swiss-red transition-all">4 Hari</button>
+                            <button onclick="setPassDays(8)" class="pass-day-btn px-3 py-2.5 rounded-xl border border-slate-200 font-bold text-sm text-slate-700 hover:border-swiss-red transition-all">8 Hari</button>
+                            <button onclick="setPassDays(15)" class="pass-day-btn px-3 py-2.5 rounded-xl border border-slate-200 font-bold text-sm text-slate-700 hover:border-swiss-red transition-all">15 Hari</button>
+                        </div>
+                    </div>
+
+                    <!-- Travel Class & Age Category -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Kelas Kereta</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button onclick="setPassClass('2')" id="class-2-btn" class="py-2.5 px-3 rounded-xl border border-swiss-red bg-swiss-lightRed font-bold text-xs sm:text-sm text-swiss-red transition-all">Kelas 2 (Standard)</button>
+                                <button onclick="setPassClass('1')" id="class-1-btn" class="py-2.5 px-3 rounded-xl border border-slate-200 bg-white font-bold text-xs sm:text-sm text-slate-600 transition-all">Kelas 1 (First)</button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Kategori Usia</label>
+                            <select id="pass-age-select" onchange="calculatePassPrice()" class="w-full py-2.5 px-3 rounded-xl border border-slate-200 font-semibold text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-swiss-red bg-white">
+                                <option value="adult">Dewasa (≥ 25 tahun)</option>
+                                <option value="youth">Pemuda (&lt; 25 tahun) - Diskon 15%</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Jumlah Penumpang</label>
+                        <div class="flex items-center space-x-4">
+                            <button onclick="changePassQty(-1)" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-lg flex items-center justify-center">-</button>
+                            <span id="pass-qty-display" class="font-extrabold text-xl text-slate-900 w-8 text-center">1</span>
+                            <button onclick="changePassQty(1)" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-lg flex items-center justify-center">+</button>
+                            <span class="text-xs text-slate-500 font-medium">Orang</span>
+                        </div>
+                    </div>
+
+                    <!-- Estimated Output Result -->
+                    <div class="bg-slate-900 rounded-2xl p-5 text-white space-y-2">
+                        <div class="flex justify-between items-center text-xs text-slate-400">
+                            <span>Estimasi Total Tiket:</span>
+                            <span id="pass-summary-text" class="font-semibold text-slate-300">4 Hari • Kelas 2 • 1 Dewasa</span>
+                        </div>
+                        <div class="flex items-baseline justify-between pt-1">
+                            <div>
+                                <span class="text-3xl font-extrabold text-white" id="pass-chf-price">CHF 295</span>
+                                <span class="text-xs text-slate-400 font-normal"> CHF</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-lg font-bold text-swiss-red" id="pass-idr-price">Rp 5.369.000</span>
+                                <span class="text-[10px] text-slate-400 block">*Kurs Rp 18.200/CHF</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openConsultationModalWithPass()" class="w-full bg-swiss-red hover:bg-swiss-darkRed text-white font-bold py-3.5 rounded-xl transition-all shadow-md shadow-swiss-red/20 text-sm flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Pesan Swiss Travel Pass Sekarang</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Itinerary Builder Section -->
+    <section id="itinerary" class="py-24 bg-slate-100/70 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center space-y-3">
+                <div class="inline-flex items-center space-x-2 bg-swiss-lightRed text-swiss-red px-3.5 py-1.5 rounded-full text-xs font-extrabold tracking-wide uppercase">
+                    <i class="fa-solid fa-route"></i>
+                    <span>Rencanakan Liburan Anda</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+                    Perencana Itinerary Interaktif
+                </h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+                    Pilih durasi, gaya perjalanan, dan kota awal Anda untuk menghasilkan rencana rujukan perjalanan terbaik secara instan.
+                </p>
+            </div>
+
+            <!-- Wizard Selection Controls -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200/60 max-w-4xl mx-auto space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Step 1: Duration -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-extrabold uppercase text-slate-400 flex items-center space-x-2">
+                            <span class="w-5 h-5 bg-swiss-red text-white rounded-full flex items-center justify-center text-[10px]">1</span>
+                            <span>Durasi Liburan</span>
+                        </label>
+                        <select id="itin-duration" onchange="generateItinerary()" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 font-bold text-slate-800 text-sm focus:ring-2 focus:ring-swiss-red outline-none">
+                            <option value="3">3 Hari (Swiss Highlights)</option>
+                            <option value="5" selected>5 Hari (Scenic Rail & Alpine)</option>
+                            <option value="7">7 Hari (Grand Tour Swiss)</option>
+                            <option value="10">10 Hari (Ultimate Swiss Explorer)</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 2: Travel Style -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-extrabold uppercase text-slate-400 flex items-center space-x-2">
+                            <span class="w-5 h-5 bg-swiss-red text-white rounded-full flex items-center justify-center text-[10px]">2</span>
+                            <span>Gaya Perjalanan</span>
+                        </label>
+                        <select id="itin-style" onchange="generateItinerary()" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 font-bold text-slate-800 text-sm focus:ring-2 focus:ring-swiss-red outline-none">
+                            <option value="adventure">Petualangan &amp; Pegunungan</option>
+                            <option value="relax">Santai, Danau &amp; Kuliner</option>
+                            <option value="family">Keluarga &amp; Kebudayaan</option>
+                            <option value="photo">Fotografi Landscape</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 3: Starting City -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-extrabold uppercase text-slate-400 flex items-center space-x-2">
+                            <span class="w-5 h-5 bg-swiss-red text-white rounded-full flex items-center justify-center text-[10px]">3</span>
+                            <span>Kota Keberangkatan</span>
+                        </label>
+                        <select id="itin-start" onchange="generateItinerary()" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 font-bold text-slate-800 text-sm focus:ring-2 focus:ring-swiss-red outline-none">
+                            <option value="Zurich">Zurich (ZRH Airport)</option>
+                            <option value="Geneva">Geneva (GVA Airport)</option>
+                            <option value="Lucerne">Lucerne</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Generated Day Timeline Output -->
+                <div class="space-y-4 pt-4 border-t border-slate-100">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-lg text-slate-900" id="itin-output-title">Rencana Perjalanan 5 Hari (Scenic Rail & Alpine)</h3>
+                        <button onclick="copyItinerarySummary()" class="text-xs font-bold text-swiss-red bg-swiss-lightRed px-3 py-1.5 rounded-lg hover:bg-swiss-red hover:text-white transition-colors flex items-center space-x-1.5">
+                            <i class="fa-regular fa-copy"></i>
+                            <span id="copy-btn-text">Salin Itinerary</span>
+                        </button>
+                    </div>
+
+                    <div id="itin-days-container" class="space-y-3">
+                        <!-- Dynamic Day Items Injected Here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Estimator & FX Converter Section -->
+    <section id="anggaran" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-12">
+            <div class="inline-flex items-center space-x-2 bg-swiss-lightRed text-swiss-red px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Estimasi Biaya &amp; Kurs Mata Uang</span>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+                Kalkulator Anggaran Liburan Swiss
+            </h2>
+            <p class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+                Swiss terkenal sebagai destinasi eksklusif. Gunakan simulasi kalkulator kami untuk merencanakan anggaran harian yang realistis.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <!-- Daily Budget Calculator -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 space-y-6">
+                <h3 class="text-xl font-bold text-slate-900 border-b pb-3 flex items-center justify-between">
+                    <span>Estimasi Pengeluaran Harian</span>
+                    <i class="fa-solid fa-chart-pie text-swiss-red"></i>
+                </h3>
+
+                <!-- Travel Style Selection -->
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase text-slate-400">Pilih Tipe Perjalanan</label>
+                    <div class="grid grid-cols-3 gap-2" id="budget-tier-group">
+                        <button onclick="setBudgetTier('backpacker')" class="budget-btn border border-slate-200 p-3 rounded-2xl text-left transition-all hover:border-swiss-red">
+                            <span class="block font-bold text-sm text-slate-800">Hemat</span>
+                            <span class="text-[11px] text-slate-400">Hostel &amp; Cook</span>
+                        </button>
+                        <button onclick="setBudgetTier('mid')" class="budget-btn border-2 border-swiss-red bg-swiss-lightRed p-3 rounded-2xl text-left transition-all active">
+                            <span class="block font-bold text-sm text-swiss-red">Standard</span>
+                            <span class="text-[11px] text-slate-600">3★ Hotel &amp; Cafe</span>
+                        </button>
+                        <button onclick="setBudgetTier('luxury')" class="budget-btn border border-slate-200 p-3 rounded-2xl text-left transition-all hover:border-swiss-red">
+                            <span class="block font-bold text-sm text-slate-800">Mewah</span>
+                            <span class="text-[11px] text-slate-400">5★ Resort &amp; Fine Dining</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Number of Days Slider -->
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center text-sm">
+                        <label class="font-bold text-slate-700">Durasi Perjalanan</label>
+                        <span class="font-extrabold text-swiss-red text-base" id="budget-days-label">7 Hari</span>
+                    </div>
+                    <input type="range" id="budget-days-slider" min="1" max="30" value="7" oninput="updateBudgetCalc()" class="w-full accent-swiss-red cursor-pointer">
+                </div>
+
+                <!-- Budget Breakdown Bar -->
+                <div class="space-y-3 pt-2">
+                    <span class="text-xs font-bold text-slate-400 uppercase">Rincian Perkiraan per Orang:</span>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between py-1 border-b border-slate-100">
+                            <span class="text-slate-600"><i class="fa-solid fa-hotel text-slate-400 w-5"></i> Akomodasi / Hotel</span>
+                            <span class="font-bold text-slate-800" id="cost-hotel">CHF 1,050</span>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-100">
+                            <span class="text-slate-600"><i class="fa-solid fa-utensils text-slate-400 w-5"></i> Makan &amp; Kuliner</span>
+                            <span class="font-bold text-slate-800" id="cost-food">CHF 420</span>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-100">
+                            <span class="text-slate-600"><i class="fa-solid fa-ticket text-slate-400 w-5"></i> Transportasi &amp; Pass</span>
+                            <span class="font-bold text-slate-800" id="cost-transport">CHF 400</span>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-100">
+                            <span class="text-slate-600"><i class="fa-solid fa-camera text-slate-400 w-5"></i> Aktivitas &amp; Lain-lain</span>
+                            <span class="font-bold text-slate-800" id="cost-activities">CHF 210</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Output -->
+                <div class="bg-slate-900 rounded-2xl p-5 text-white flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-slate-400 block uppercase">Total Estimasi Anggaran:</span>
+                        <span class="text-2xl font-extrabold text-white" id="total-budget-chf">CHF 2,080</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xl font-bold text-emerald-400 block" id="total-budget-idr">Rp 37.856.000</span>
+                        <span class="text-[10px] text-slate-400">*Di luar tiket pesawat internasional</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Currency FX Converter Widget -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 space-y-6">
+                <h3 class="text-xl font-bold text-slate-900 border-b pb-3 flex items-center justify-between">
+                    <span>Konverter Mata Uang CHF &lt;&gt; IDR</span>
+                    <i class="fa-solid fa-right-left text-swiss-red"></i>
+                </h3>
+
+                <div class="space-y-4">
+                    <!-- CHF Input -->
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-500 uppercase">Mata Uang Franc Swiss (CHF)</label>
+                        <div class="relative">
+                            <input type="number" id="fx-chf-input" value="100" oninput="convertChfToIdr()" class="w-full p-3.5 pl-12 rounded-xl border border-slate-200 font-extrabold text-slate-800 text-lg focus:ring-2 focus:ring-swiss-red outline-none">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-slate-400">CHF</span>
+                        </div>
+                    </div>
+
+                    <!-- Swap Icon -->
+                    <div class="text-center">
+                        <span class="w-10 h-10 rounded-full bg-slate-100 text-slate-600 inline-flex items-center justify-center">
+                            <i class="fa-solid fa-arrow-down-up-lock"></i>
+                        </span>
+                    </div>
+
+                    <!-- IDR Output -->
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-500 uppercase">Rupiah Indonesia (IDR)</label>
+                        <div class="relative">
+                            <input type="number" id="fx-idr-input" value="1820000" oninput="convertIdrToChf()" class="w-full p-3.5 pl-12 rounded-xl border border-slate-200 font-extrabold text-swiss-red text-lg focus:ring-2 focus:ring-swiss-red outline-none">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-slate-400">Rp</span>
+                        </div>
+                    </div>
+
+                    <!-- Custom Rate Setter -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-bold text-slate-600">Nilai Tukar Acuan (Rate):</span>
+                            <button onclick="resetFxRate()" class="text-swiss-red font-semibold underline">Reset Standar</button>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs text-slate-500 font-medium">1 CHF = Rp</span>
+                            <input type="number" id="custom-rate-input" value="18200" onchange="updateCustomRate()" class="w-28 p-1.5 border border-slate-300 rounded-lg text-xs font-bold text-slate-800">
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-500 italic">
+                        <i class="fa-solid fa-circle-info text-slate-400"></i>
+                        Pemberitahuan: Franc Swiss (CHF) adalah mata uang resmi. Kartu kredit universal diterima di hampir seluruh wilayah Swiss.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Alpine Weather Section -->
+    <section id="cuaca" class="py-24 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center space-y-3">
+                <div class="inline-flex items-center space-x-2 bg-white/10 text-cyan-300 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase border border-white/10">
+                    <i class="fa-solid fa-cloud-sun text-cyan-300"></i>
+                    <span>Informasi Cuaca Puncak Alpine</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                    Kondisi Real-Time Puncak Utama
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    Pantau kondisi suhu, status kereta gantung, dan visibilitas di puncak gunung tertinggi sebelum melakukan pendakian.
+                </p>
+            </div>
+
+            <!-- Weather Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="weather-grid">
+                <!-- Jungfraujoch Card -->
+                <div class="glass-dark rounded-3xl p-6 border border-white/10 relative overflow-hidden group hover:border-cyan-400/50 transition-all">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-semibold text-slate-400">Elevasi 3,454m</span>
+                            <h3 class="text-xl font-bold text-white mt-0.5">Jungfraujoch</h3>
+                            <span class="text-[10px] text-cyan-300 font-mono">Top of Europe</span>
+                        </div>
+                        <i class="fa-solid fa-snowflake text-2xl text-cyan-300"></i>
+                    </div>
+                    <div class="my-6">
+                        <div class="text-4xl font-extrabold text-white font-serif">-4°C</div>
+                        <p class="text-xs text-slate-300 mt-1 flex items-center space-x-1.5">
+                            <i class="fa-solid fa-wind text-slate-400"></i>
+                            <span>Cerah Angin 12 km/h</span>
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-white/10 flex justify-between items-center text-xs">
+                        <span class="text-slate-400">Kereta Eiger Express:</span>
+                        <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 font-bold rounded-full border border-emerald-500/30">Beroperasi</span>
+                    </div>
+                </div>
+
+                <!-- Matterhorn / Klein Matterhorn Card -->
+                <div class="glass-dark rounded-3xl p-6 border border-white/10 relative overflow-hidden group hover:border-cyan-400/50 transition-all">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-semibold text-slate-400">Elevasi 3,883m</span>
+                            <h3 class="text-xl font-bold text-white mt-0.5">Matterhorn Paradise</h3>
+                            <span class="text-[10px] text-amber-300 font-mono">Zermatt Peak</span>
+                        </div>
+                        <i class="fa-solid fa-sun text-2xl text-amber-300"></i>
+                    </div>
+                    <div class="my-6">
+                        <div class="text-4xl font-extrabold text-white font-serif">-2°C</div>
+                        <p class="text-xs text-slate-300 mt-1 flex items-center space-x-1.5">
+                            <i class="fa-solid fa-eye text-slate-400"></i>
+                            <span>Visibilitas Sempurna</span>
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-white/10 flex justify-between items-center text-xs">
+                        <span class="text-slate-400">Gornergrat Railway:</span>
+                        <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 font-bold rounded-full border border-emerald-500/30">Beroperasi</span>
+                    </div>
+                </div>
+
+                <!-- Mt Titlis Card -->
+                <div class="glass-dark rounded-3xl p-6 border border-white/10 relative overflow-hidden group hover:border-cyan-400/50 transition-all">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-semibold text-slate-400">Elevasi 3,020m</span>
+                            <h3 class="text-xl font-bold text-white mt-0.5">Mt. Titlis</h3>
+                            <span class="text-[10px] text-slate-300 font-mono">Engelberg</span>
+                        </div>
+                        <i class="fa-solid fa-cloud text-2xl text-slate-300"></i>
+                    </div>
+                    <div class="my-6">
+                        <div class="text-4xl font-extrabold text-white font-serif">1°C</div>
+                        <p class="text-xs text-slate-300 mt-1 flex items-center space-x-1.5">
+                            <i class="fa-solid fa-cloud-sun text-slate-400"></i>
+                            <span>Berawan Tipis</span>
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-white/10 flex justify-between items-center text-xs">
+                        <span class="text-slate-400">Titlis Rotair 360°:</span>
+                        <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 font-bold rounded-full border border-emerald-500/30">Beroperasi</span>
+                    </div>
+                </div>
+
+                <!-- St. Moritz Card -->
+                <div class="glass-dark rounded-3xl p-6 border border-white/10 relative overflow-hidden group hover:border-cyan-400/50 transition-all">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-semibold text-slate-400">Elevasi 1,822m</span>
+                            <h3 class="text-xl font-bold text-white mt-0.5">St. Moritz</h3>
+                            <span class="text-[10px] text-emerald-300 font-mono">Engadin Valley</span>
+                        </div>
+                        <i class="fa-solid fa-sun text-2xl text-amber-300"></i>
+                    </div>
+                    <div class="my-6">
+                        <div class="text-4xl font-extrabold text-white font-serif">8°C</div>
+                        <p class="text-xs text-slate-300 mt-1 flex items-center space-x-1.5">
+                            <i class="fa-solid fa-temperature-three-quarters text-slate-400"></i>
+                            <span>Sejuk &amp; Nyaman</span>
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-white/10 flex justify-between items-center text-xs">
+                        <span class="text-slate-400">Bernina Line:</span>
+                        <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 font-bold rounded-full border border-emerald-500/30">Beroperasi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Modal -->
+    <div id="consultation-modal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100">
+            <!-- Modal Close Button -->
+            <button onclick="closeConsultationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-base"></i>
+            </button>
+
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-swiss-lightRed text-swiss-red flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-extrabold text-slate-900">Konsultasi Liburan Swiss</h3>
+                        <p class="text-xs text-slate-500">Dapatkan saran rute &amp; penawaran kustom GRATIS dari spesialis Swiss kami.</p>
+                    </div>
+                </div>
+
+                <form id="consult-form" onsubmit="handleConsultationSubmit(event)" class="space-y-3 pt-2">
+                    <div>
+                        <label class="text-xs font-bold uppercase text-slate-500 block mb-1">Nama Lengkap</label>
+                        <input type="text" required placeholder="Contoh: Budi Santoso" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-swiss-red outline-none">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="text-xs font-bold uppercase text-slate-500 block mb-1">Email / WhatsApp</label>
+                            <input type="text" required placeholder="0812xxxx atau email" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-swiss-red outline-none">
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold uppercase text-slate-500 block mb-1">Rencana Keberangkatan</label>
+                            <input type="date" required class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-swiss-red outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold uppercase text-slate-500 block mb-1">Pilihan Layanan</label>
+                        <select id="modal-service-type" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-swiss-red outline-none font-semibold text-slate-700">
+                            <option value="custom">Penyusunan Custom Itinerary &amp; Private Tour</option>
+                            <option value="pass">Pemesanan Swiss Travel Pass Official</option>
+                            <option value="train">Reservasi Seat Kereta Panorama (Glacier/Bernina)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold uppercase text-slate-500 block mb-1">Catatan Tambahan (Opsional)</label>
+                        <textarea rows="3" placeholder="Sebutkan jumlah peserta, keinginan khusus, atau preferensi hotel..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-swiss-red outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-swiss-red hover:bg-swiss-darkRed text-white font-bold py-3.5 rounded-xl shadow-md shadow-swiss-red/20 transition-all text-sm">
+                        Kirim Permintaan Konsultasi
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 pt-16 pb-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand Info -->
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 bg-swiss-red rounded-xl flex items-center justify-center text-white">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="10" y="4" width="4" height="16" rx="1"/>
+                                <rect x="4" y="10" width="16" height="4" rx="1"/>
+                            </svg>
+                        </div>
+                        <span class="font-bold text-lg text-white">SWISS<span class="text-swiss-red">VISIT</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Portal informasi terpercaya wisata Swiss berbahasa Indonesia. Temukan rekomendasi terbaik untuk liburan alpine tak terlupakan.
+                    </p>
+                </div>
+
+                <!-- Navigation Quick Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Navigasi Utama</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#destinasi" class="hover:text-swiss-red transition-colors">Destinasi Populer</a></li>
+                        <li><a href="#kereta" class="hover:text-swiss-red transition-colors">Kereta Panorama Express</a></li>
+                        <li><a href="#swiss-pass" class="hover:text-swiss-red transition-colors">Harga Swiss Travel Pass</a></li>
+                        <li><a href="#itinerary" class="hover:text-swiss-red transition-colors">Perencana Itinerary</a></li>
+                        <li><a href="#anggaran" class="hover:text-swiss-red transition-colors">Kalkulator CHF - IDR</a></li>
+                    </ul>
+                </div>
+
+                <!-- Travel Tips Swiss -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Tips Perjalanan</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><span class="text-slate-300">Musim Terbaik:</span> Jun-Sep (Summer), Des-Mar (Ski)</li>
+                        <li><span class="text-slate-300">Bahasa Resmi:</span> Jerman, Prancis, Italia, Romansh</li>
+                        <li><span class="text-slate-300">Air Minum:</span> 100% Gratis di Air Mancur Kota</li>
+                        <li><span class="text-slate-300">Colokan Listrik:</span> Tipe J (230V, 50Hz)</li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Social -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Layanan Pelanggan</h4>
+                    <p class="text-xs">Hubungi kami untuk kolaborasi atau konsultasi perjalanan kustom.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-swiss-red hover:border-swiss-red transition-all">
+                            <i class="fa-brands fa-instagram text-xs"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-swiss-red hover:border-swiss-red transition-all">
+                            <i class="fa-brands fa-facebook-f text-xs"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-swiss-red hover:border-swiss-red transition-all">
+                            <i class="fa-brands fa-youtube text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 SwissVisit Indonesia. Seluruh Hak Cipta Dilindungi.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:underline">Kebijakan Privasi</a>
+                    <a href="#" class="hover:underline">Syarat &amp; Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global State & Data
+        let currentFxRate = 18200; // 1 CHF in IDR
+        let selectedPassDays = 4;
+        let selectedPassClass = '2';
+        let passQty = 1;
+        let selectedBudgetTier = 'mid';
+
+        // Destinasi Dataset
+        const destinationsData = [
+            {
+                id: 'zermatt',
+                title: 'Zermatt & Matterhorn',
+                categoryTag: 'alpine',
+                categoryLabel: 'Alpine & Ski',
+                img: 'https://images.unsplash.com/photo-1517824806704-9040b037703b?q=80&w=800&auto=format&fit=crop',
+                shortDesc: 'Desa alpine ikonik tanpa mobil di kaki Gunung Matterhorn yang paling terkenal di dunia.',
+                bestTime: 'Juni - September & Desember - April',
+                access: 'Kereta Api (Bebas Mobil)',
+                cost: 'CHF 150 - 300 / hari',
+                highlights: [
+                    'Gornergrat Railway dengan pemandangan 29 puncak alpine',
+                    'Matterhorn Glacier Paradise (3,883m)',
+                    'Desa kayu tradisional Swiss & toko cokelat',
+                    'Jalur hiking 5 Danau (5-Seenweg)'
+                ],
+                cableCarTip: 'Gunakan Swiss Travel Pass untuk mendapatkan diskon 50% tiket Gornergrat Bahn!'
+            },
+            {
+                id: 'jungfrau',
+                title: 'Interlaken & Jungfraujoch',
+                categoryTag: 'alpine',
+                categoryLabel: 'Alpine & Ski',
+                img: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=800&auto=format&fit=crop',
+                shortDesc: 'Stasiun kereta api tertinggi di Eropa (Top of Europe) di antara Danau Thun dan Brienz.',
+                bestTime: 'Sepanjang Tahun',
+                access: 'Kereta Eiger Express & Cogwheel',
+                cost: 'CHF 180 - 350 / hari',
+                highlights: [
+                    'Stasiun Kereta Jungfraujoch (3,454 mdpl)',
+                    'Istana Es (Ice Palace) & Sphinx Observatory',
+                    'Paragliding di atas lembah Interlaken',
+                    'Kereta gantung canggih Eiger Express'
+                ],
+                cableCarTip: 'Pegang Swiss Travel Pass memberikan diskon 25% untuk perjalanan tiket puncak Jungfraujoch.'
+            },
+            {
+                id: 'lauterbrunnen',
+                title: 'Lauterbrunnen Valley',
+                categoryTag: 'lakes',
+                categoryLabel: 'Danau & Kota',
+                img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop',
+                shortDesc: 'Lembah impian dengan 72 air terjun spektakuler, inspirasi karya Lord of the Rings.',
+                bestTime: 'Mei - Oktober',
+                access: 'Kereta BOB dari Interlaken',
+                cost: 'CHF 100 - 200 / hari',
+                highlights: [
+                    'Air Terjun Staubbach (tinggi 297 meter)',
+                    'Trümmelbach Falls (10 air terjun dalam gua es)',
+                    'Desa tebing Mürren & Wengen',
+                    'Kereta gantung ke Schilthorn (Puncak James Bond 007)'
+                ],
+                cableCarTip: 'Akses PostBus mengelilingi lembah Lauterbrunnen 100% GRATIS dengan Swiss Travel Pass.'
+            },
+            {
+                id: 'lucerne',
+                title: 'Lucerne (Luzern)',
+                categoryTag: 'lakes',
+                categoryLabel: 'Danau & Kota',
+                img: 'https://images.unsplash.com/photo-1584003564911-a7a321c84e1c?q=80&w=800&auto=format&fit=crop',
+                shortDesc: 'Kota bersejarah tepi danau dengan jembatan kayu kuno Chapel Bridge dan latar Gunung Pilatus.',
+                bestTime: 'Mei - Oktober',
+                access: 'Kereta Utama SBB Direct',
+                cost: 'CHF 120 - 220 / hari',
+                highlights: [
+                    'Jembatan Kayu Chapel Bridge (Kapellbrücke)',
+                    'Tur Kapal Pesiar Danau Lucerne',
+                    'Gunung Pilatus (Kereta Roda Gigi Tercuram di Dunia)',
+                    'Gunung Rigi (Rigi Queen of Mountains)'
+                ],
+                cableCarTip: 'Tiket kapal Danau Lucerne & Kereta gantung Mt. Rigi GRATIS 100% dengan Swiss Travel Pass!'
+            },
+            {
+                id: 'zurich',
+                title: 'Zurich Old Town & Lake',
+                categoryTag: 'culture',
+                categoryLabel: 'Budaya & Kuliner',
+                img: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=800&auto=format&fit=crop',
+                shortDesc: 'Metropolis kosmopolitan Swiss dengan belanja kelas dunia, museum seni, dan kuliner fondue.',
+                bestTime: 'Sepanjang Tahun',
+                access: 'Bandara Internasional ZRH / SBB',
+                cost: 'CHF 160 - 320 / hari',
+                highlights: [
+                    'Jalan Belanja Bahnhofstrasse',
+                    'Kota Tua Altstadt & Gereja Grossmünster',
+                    'Lindt Home of Chocolate Museum',
+                    'Pelayaran Danau Zurich'
+                ],
+                cableCarTip: 'Transportasi trem dan bus kota di Zurich sepenuhnya tercakup oleh Swiss Travel Pass.'
+            },
+            {
+                id: 'grindelwald',
+                title: 'Grindelwald First',
+                categoryTag: 'scenic',
+                categoryLabel: 'Kereta Panorama',
+                img: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?q=80&w=800&auto=format&fit=crop',
+                shortDesc: 'Desa alpine dengan pemandangan Dinding Utara Eiger dan wahana petualangan seru.',
+                bestTime: 'Juni - Oktober & Des - Maret',
+                access: 'Kereta BOB / Berner Oberland',
+                cost: 'CHF 130 - 250 / hari',
+                highlights: [
+                    'First Cliff Walk by Tissot (Jembatan Gantung)',
+                    'First Glider & Mountain Cart',
+                    'Danau Bachalpsee hiking trail',
+                    'Area Ski Kleine Scheidegg'
+                ],
+                cableCarTip: 'Diskon 50% tiket gondola Grindelwald-First bagi pemegang Swiss Travel Pass.'
+            }
+        ];
+
+        // Trains Dataset
+        const trainsData = {
+            glacier: {
+                title: 'Glacier Express',
+                subtitle: 'Kereta Express Terlambat di Dunia (The Slowest Express Train)',
+                duration: '8 Jam 20 Menit',
+                route: 'Zermatt ➔ Andermatt ➔ Chur ➔ St. Moritz',
+                highlights: '291 Jembatan, 91 Terowongan, Oberalp Pass (2,033m), Ngarai Swiss Grand Canyon.',
+                img: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=1000&auto=format&fit=crop',
+                desc: 'Nikmati jendela panorama melengkung 360 derajat sambil menikmati hidangan kuliner 3-course segar di meja makan Anda saat melewati puncak es Alpine.'
+            },
+            bernina: {
+                title: 'Bernina Express',
+                subtitle: 'Dari Puncak Es ke Pohon Palem Italia (UNESCO World Heritage)',
+                duration: '4 Jam 15 Menit',
+                route: 'Chur / St. Moritz ➔ Tirano (Italia)',
+                highlights: 'Jembatan Melingkar Brusio, Gletser Morteratsch, Lago Bianco (2,253m).',
+                img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop',
+                desc: 'Rute kereta lintas batas tertinggi di Pegunungan Alps. Menghubungkan daerah alpine bersalju St. Moritz menuju keindahan bernuansa mediterania Tirano Italia.'
+            },
+            goldenpass: {
+                title: 'GoldenPass Express',
+                subtitle: 'Penghubung Danau Jenewa ke Jantung Berner Oberland',
+                duration: '3 Jam 15 Menit',
+                route: 'Montreux ➔ Gstaad ➔ Interlaken',
+                highlights: 'Kebun Anggur Lavaux, Desa Mewah Gstaad, Danau Thun & Brienz.',
+                img: 'https://images.unsplash.com/photo-1584003564911-a7a321c84e1c?q=80&w=1000&auto=format&fit=crop',
+                desc: 'Kereta canggih yang secara otomatis berganti rel dan ketinggian tanpa penumpang perlu berpindah kereta. Pemandangan pedesaan Swiss paling puitis.'
+            }
+        };
+
+        // Pass Pricing Table Matrix (Consecutive Days)
+        const passPrices = {
+            '2': { // Class 2
+                adult: { 3: 244, 4: 295, 8: 409, 15: 459 },
+                youth: { 3: 207, 4: 251, 8: 348, 15: 390 }
+            },
+            '1': { // Class 1
+                adult: { 3: 389, 4: 469, 8: 649, 15: 728 },
+                youth: { 3: 331, 4: 399, 8: 552, 15: 619 }
+            }
+        };
+
+        // Initialization on Load
+        window.onload = function() {
+            renderDestinations(destinationsData);
+            selectTrain('glacier');
+            calculatePassPrice();
+            generateItinerary();
+            updateBudgetCalc();
+        };
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-xl';
+            }
+        }
+
+        // Render Destinations Grid
+        function renderDestinations(items) {
+            const grid = document.getElementById('destinations-grid');
+            grid.innerHTML = '';
+
+            if (items.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-400 font-medium">Destinasi tidak ditemukan. Coba kata kunci lain.</div>`;
+                return;
+            }
+
+            items.forEach(dest => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between';
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="${dest.img}" alt="${dest.title}" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/0f172a/ffffff?text=${encodeURIComponent(dest.title)}'">
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-slate-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                                ${dest.categoryLabel}
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-swiss-red transition-colors font-serif">${dest.title}</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm line-clamp-2 leading-relaxed">${dest.shortDesc}</p>
+                            
+                            <div class="pt-2 flex items-center justify-between text-xs text-slate-500 font-medium border-t border-slate-100">
+                                <span><i class="fa-regular fa-calendar text-swiss-red mr-1"></i> ${dest.bestTime.split('&')[0]}</span>
+                                <span><i class="fa-solid fa-train text-slate-400 mr-1"></i> Akses Kereta</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openDestModal('${dest.id}')" class="w-full bg-slate-100 hover:bg-swiss-red hover:text-white text-slate-700 font-bold py-2.5 rounded-xl transition-all text-xs flex items-center justify-center space-x-1.5">
+                            <span>Lihat Panduan Lengkap</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter Destinations Function
+        function filterDestinations(category) {
+            // Update button styles
+            const buttons = document.querySelectorAll('#destination-filters button');
+            buttons.forEach(btn => {
+                btn.className = 'filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition-all';
+            });
+            event.currentTarget.className = 'filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-swiss-red text-white shadow-md shadow-swiss-red/20';
+
+            if (category === 'all') {
+                renderDestinations(destinationsData);
+            } else {
+                const filtered = destinationsData.filter(d => d.categoryTag === category);
+                renderDestinations(filtered);
+            }
+        }
+
+        // Hero Search Bar Filter Trigger
+        function handleHeroSearch() {
+            const query = document.getElementById('hero-search-input').value.toLowerCase().trim();
+            if (query === '') {
+                renderDestinations(destinationsData);
+            } else {
+                const results = destinationsData.filter(d => 
+                    d.title.toLowerCase().includes(query) || 
+                    d.shortDesc.toLowerCase().includes(query) ||
+                    d.categoryLabel.toLowerCase().includes(query)
+                );
+                renderDestinations(results);
+            }
+        }
+
+        // Destination Modal Open/Close
+        function openDestModal(id) {
+            const dest = destinationsData.find(d => d.id === id);
+            if (!dest) return;
+
+            document.getElementById('modal-img').src = dest.img;
+            document.getElementById('modal-title').innerText = dest.title;
+            document.getElementById('modal-category').innerText = dest.categoryLabel;
+            document.getElementById('modal-desc').innerText = dest.shortDesc + ' ' + dest.highlights.join('. ') + '.';
+            document.getElementById('modal-best-time').innerText = dest.bestTime;
+            document.getElementById('modal-access').innerText = dest.access;
+            document.getElementById('modal-cost').innerText = dest.cost;
+            document.getElementById('modal-tip').innerText = dest.cableCarTip;
+
+            const highlightsList = document.getElementById('modal-highlights');
+            highlightsList.innerHTML = '';
+            dest.highlights.forEach(h => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start space-x-2';
+                li.innerHTML = `<i class="fa-solid fa-circle-check text-swiss-red text-xs mt-1"></i><span>${h}</span>`;
+                highlightsList.appendChild(li);
+            });
+
+            document.getElementById('dest-modal').classList.remove('hidden');
+        }
+
+        function closeDestModal() {
+            document.getElementById('dest-modal').classList.add('hidden');
+        }
+
+        // Scenic Train Selector Tab Logic
+        function selectTrain(key) {
+            const data = trainsData[key];
+            if (!data) return;
+
+            // Tab button state highlight
+            const tabs = document.querySelectorAll('.train-tab-btn');
+            tabs.forEach(t => {
+                t.className = 'train-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition-all bg-slate-800 text-slate-300 hover:bg-slate-700 flex items-center space-x-2 whitespace-nowrap';
+            });
+            const activeTab = document.getElementById(`tab-${key}`);
+            if (activeTab) {
+                activeTab.className = 'train-tab-btn active px-5 py-3 rounded-xl font-bold text-sm transition-all bg-swiss-red text-white flex items-center space-x-2 whitespace-nowrap shadow-lg shadow-swiss-red/30';
+            }
+
+            // Display update
+            const displayCard = document.getElementById('train-display-card');
+            displayCard.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-6 space-y-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-swiss-red block">${data.subtitle}</span>
+                        <h3 class="text-3xl font-extrabold text-white font-serif">${data.title}</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">${data.desc}</p>
+
+                        <div class="space-y-3 pt-2">
+                            <div class="flex items-center space-x-3 text-xs sm:text-sm text-slate-200">
+                                <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-swiss-red font-bold">
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-[10px] text-slate-400">Durasi Perjalanan</span>
+                                    <span class="font-bold">${data.duration}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 text-xs sm:text-sm text-slate-200">
+                                <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-swiss-red font-bold">
+                                    <i class="fa-solid fa-route"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-[10px] text-slate-400">Rute Utama</span>
+                                    <span class="font-bold">${data.route}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 text-xs sm:text-sm text-slate-200">
+                                <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-swiss-red font-bold">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-[10px] text-slate-400">Highlight Pemandangan</span>
+                                    <span class="font-bold">${data.highlights}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <button onclick="openConsultationModalWithTrain('${data.title}')" class="bg-swiss-red hover:bg-swiss-darkRed text-white font-bold py-3 px-6 rounded-xl text-xs sm:text-sm transition-all flex items-center space-x-2">
+                                <i class="fa-solid fa-ticket"></i>
+                                <span>Pesan Reservasi Kereta ${data.title}</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 relative h-64 sm:h-80 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="${data.img}" alt="${data.title}" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                            <span class="text-xs text-slate-300 font-medium italic"><i class="fa-solid fa-camera mr-1"></i> Tampilan Jendela Panorama Paling Dinantikan</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Swiss Travel Pass Dynamic Calculation
+        function setPassDays(days) {
+            selectedPassDays = days;
+            const buttons = document.querySelectorAll('.pass-day-btn');
+            buttons.forEach(btn => {
+                btn.className = 'pass-day-btn px-3 py-2.5 rounded-xl border border-slate-200 font-bold text-sm text-slate-700 hover:border-swiss-red transition-all';
+                if (parseInt(btn.innerText) === days) {
+                    btn.className = 'pass-day-btn px-3 py-2.5 rounded-xl border-2 border-swiss-red bg-swiss-lightRed font-bold text-sm text-swiss-red transition-all active';
+                }
+            });
+            calculatePassPrice();
+        }
+
+        function setPassClass(cls) {
+            selectedPassClass = cls;
+            const btn1 = document.getElementById('class-1-btn');
+            const btn2 = document.getElementById('class-2-btn');
+            if (cls === '1') {
+                btn1.className = 'py-2.5 px-3 rounded-xl border border-swiss-red bg-swiss-lightRed font-bold text-xs sm:text-sm text-swiss-red transition-all';
+                btn2.className = 'py-2.5 px-3 rounded-xl border border-slate-200 bg-white font-bold text-xs sm:text-sm text-slate-600 transition-all';
+            } else {
+                btn2.className = 'py-2.5 px-3 rounded-xl border border-swiss-red bg-swiss-lightRed font-bold text-xs sm:text-sm text-swiss-red transition-all';
+                btn1.className = 'py-2.5 px-3 rounded-xl border border-slate-200 bg-white font-bold text-xs sm:text-sm text-slate-600 transition-all';
+            }
+            calculatePassPrice();
+        }
+
+        function changePassQty(delta) {
+            passQty = Math.max(1, passQty + delta);
+            document.getElementById('pass-qty-display').innerText = passQty;
+            calculatePassPrice();
+        }
+
+        function calculatePassPrice() {
+            const ageCategory = document.getElementById('pass-age-select').value;
+            const singleChfPrice = passPrices[selectedPassClass][ageCategory][selectedPassDays];
+            const totalChf = singleChfPrice * passQty;
+            const totalIdr = totalChf * currentFxRate;
+
+            document.getElementById('pass-chf-price').innerText = `CHF ${totalChf.toLocaleString('en-US')}`;
+            document.getElementById('pass-idr-price').innerText = `Rp ${totalIdr.toLocaleString('id-ID')}`;
+            
+            const ageLabel = ageCategory === 'adult' ? 'Dewasa' : 'Pemuda (<25 thn)';
+            document.getElementById('pass-summary-text').innerText = `${selectedPassDays} Hari • Kelas ${selectedPassClass} • ${passQty} ${ageLabel}`;
+        }
+
+        // Custom Itinerary Builder Generator
+        function generateItinerary() {
+            const duration = document.getElementById('itin-duration').value;
+            const style = document.getElementById('itin-style').value;
+            const startCity = document.getElementById('itin-start').value;
+
+            const titleElement = document.getElementById('itin-output-title');
+            const container = document.getElementById('itin-days-container');
+
+            titleElement.innerText = `Rencana Liburan ${duration} Hari dari ${startCity} (${getStyleLabel(style)})`;
+            container.innerHTML = '';
+
+            const dayTemplates = getItineraryDays(parseInt(duration), style, startCity);
+
+            dayTemplates.forEach((day, index) => {
+                const dayBox = document.createElement('div');
+                dayBox.className = 'bg-slate-50 border border-slate-200 rounded-2xl p-4 space-y-2 hover:border-swiss-red/40 transition-colors';
+                dayBox.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="bg-swiss-red text-white text-xs font-bold px-3 py-1 rounded-full">Hari ${index + 1}</span>
+                        <span class="text-xs font-bold text-slate-500"><i class="fa-solid fa-train text-swiss-red mr-1"></i> Rute: ${day.route}</span>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm sm:text-base">${day.title}</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${day.activities}</p>
+                    <div class="text-[11px] text-amber-800 bg-amber-50 p-2 rounded-lg font-medium border border-amber-100 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-star text-amber-500"></i>
+                        <span><strong>Highlight:</strong> ${day.highlight}</span>
+                    </div>
+                `;
+                container.appendChild(dayBox);
+            });
+        }
+
+        function getStyleLabel(style) {
+            switch(style) {
+                case 'adventure': return 'Petualangan & Pegunungan';
+                case 'relax': return 'Santai & Danau Kristal';
+                case 'family': return 'Keluarga & Budaya';
+                case 'photo': return 'Fotografi Landscape';
+                default: return 'Alpine Highlights';
+            }
+        }
+
+        function getItineraryDays(duration, style, start) {
+            const days = [];
+            
+            // Day 1
+            days.push({
+                title: `Tiba di ${start} - Eksplorasi Kota & Tepi Danau`,
+                route: `${start} Airport ➔ Pusat Kota`,
+                activities: `Tiba dan check-in hotel. Berjalan santai menikmati arsitektur kota tua, mencicipi cokelat khas Swiss, dan pelayaran sore dengan kapal di danau.`,
+                highlight: `Makan malam khas Swiss Cheese Fondue pertama.`
+            });
+
+            // Day 2
+            days.push({
+                title: `Perjalanan ke Interlaken & Lauterbrunnen`,
+                route: `${start} ➔ Lucerne ➔ Interlaken`,
+                activities: `Naik kereta scenic Zentralbahn melintasi Brunig Pass menuju Interlaken. Melanjutkan ke Lembah Lauterbrunnen untuk melihat Air Terjun Staubbach.`,
+                highlight: `Pemandangan 72 Air Terjun di Lauterbrunnen Valley.`
+            });
+
+            // Day 3
+            days.push({
+                title: `Puncak Es Jungfraujoch (Top of Europe)`,
+                route: `Grindelwald Terminal ➔ Eiger Express ➔ Jungfraujoch`,
+                activities: `Naik gondola canggih Eiger Express menuju Jungfraujoch (3,454m). Mengunjungi Ice Palace, Sphinx Observatory, dan bermain salju abadi.`,
+                highlight: `Berfoto di bendera Swiss puncak Top of Europe.`
+            });
+
+            if (duration >= 5) {
+                days.push({
+                    title: `Kereta Scenic Glacier Express ke Zermatt`,
+                    route: `Interlaken ➔ Brig ➔ Zermatt`,
+                    activities: `Perjalanan kereta menuju desa bebas mobil Zermatt. Menikmati pemandangan Matterhorn dari alun-alun desa kayu tradisional.`,
+                    highlight: `Sunset spektakuler dengan latar puncak Matterhorn.`
+                });
+
+                days.push({
+                    title: `Kereta Gantung Gornergrat & Danau Mirror`,
+                    route: `Zermatt ➔ Gornergrat Railway (3,089m)`,
+                    activities: `Naik kereta roda gigi Gornergrat. Hiking santai menuju Danau Riffelsee untuk melihat refleksi bayangan cermin Gunung Matterhorn.`,
+                    highlight: `Refleksi Matterhorn di permukaan Danau Riffelsee.`
+                });
+            }
+
+            if (duration >= 7) {
+                days.push({
+                    title: `Wilayah Danau Lucerne & Gunung Pilatus`,
+                    route: `Zermatt ➔ Lucerne ➔ Mt. Pilatus`,
+                    activities: `Menuju Lucerne, menaiki kereta roda gigi tercuram di dunia naik ke Gunung Pilatus dan turun dengan gondola panorama Dragon Ride.`,
+                    highlight: `Jembatan bersejarah Chapel Bridge & Monumen Singa.`
+                });
+
+                days.push({
+                    title: `Zurich / Geneva Shopping & Keberangkatan`,
+                    route: `Lucerne ➔ ${start} Airport`,
+                    activities: `Waktu bebas untuk belanja souvenir chocolate Swiss dan jam tangan mewah di Bahnhofstrasse sebelum transfer ke bandara.`,
+                    highlight: `Kunjungan ke Lindt Home of Chocolate Fountain.`
+                });
+            }
+
+            if (duration >= 10) {
+                days.push({
+                    title: `Danau Jenewa, Montreux & Kastil Chillon`,
+                    route: `Lucerne ➔ Montreux`,
+                    activities: `Menjelajahi kawasan kebun anggur Lavaux (UNESCO) dan mengunjungi Kastil Chillon di tepi Danau Jenewa.`,
+                    highlight: `Kastil abad pertengahan Chillon Castle.`
+                });
+                days.push({
+                    title: `St. Moritz & Jalur Bernina Express`,
+                    route: `Montreux ➔ St. Moritz`,
+                    activities: `Menikmati kawasan elit resor gunung St. Moritz dan menjajal bagian rute kereta Bernina Express.`,
+                    highlight: `Panorama danau Engadin Valley.`
+                });
+                days.push({
+                    title: `Kembali ke ${start} & Kepulangan`,
+                    route: `St. Moritz ➔ ${start} Airport`,
+                    activities: `Perjalanan kembali dengan kereta panorama, packing akhir, dan penerbangan kembali ke tanah air.`,
+                    highlight: `Membuat kenangan alpine tak terlupakan.`
+                });
+            }
+
+            return days.slice(0, duration);
+        }
+
+        function copyItinerarySummary() {
+            const title = document.getElementById('itin-output-title').innerText;
+            const text = `${title}\n\nDiproses melalui Portal Jelajahi Keindahan Swiss. Rencanakan liburan impian Anda bersama kami!`;
+            
+            // Clipboard copy workaround
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            const copyBtnText = document.getElementById('copy-btn-text');
+            copyBtnText.innerText = "Tersalin!";
+            setTimeout(() => {
+                copyBtnText.innerText = "Salin Itinerary";
+            }, 2000);
+        }
+
+        // Budget & Currency Calculation Logic
+        const budgetTiers = {
+            backpacker: { hotel: 50, food: 30, transport: 35, activities: 20 },
+            mid: { hotel: 150, food: 60, transport: 55, activities: 30 },
+            luxury: { hotel: 400, food: 150, transport: 90, activities: 80 }
+        };
+
+        function setBudgetTier(tier) {
+            selectedBudgetTier = tier;
+            const buttons = document.querySelectorAll('.budget-btn');
+            buttons.forEach(btn => {
+                btn.className = 'budget-btn border border-slate-200 p-3 rounded-2xl text-left transition-all hover:border-swiss-red';
+            });
+            event.currentTarget.className = 'budget-btn border-2 border-swiss-red bg-swiss-lightRed p-3 rounded-2xl text-left transition-all active';
+            updateBudgetCalc();
+        }
+
+        function updateBudgetCalc() {
+            const days = parseInt(document.getElementById('budget-days-slider').value);
+            document.getElementById('budget-days-label').innerText = `${days} Hari`;
+
+            const rates = budgetTiers[selectedBudgetTier];
+            const hotelTotal = rates.hotel * days;
+            const foodTotal = rates.food * days;
+            const transportTotal = rates.transport * days;
+            const activitiesTotal = rates.activities * days;
+
+            const totalChf = hotelTotal + foodTotal + transportTotal + activitiesTotal;
+            const totalIdr = totalChf * currentFxRate;
+
+            document.getElementById('cost-hotel').innerText = `CHF ${hotelTotal.toLocaleString('en-US')}`;
+            document.getElementById('cost-food').innerText = `CHF ${foodTotal.toLocaleString('en-US')}`;
+            document.getElementById('cost-transport').innerText = `CHF ${transportTotal.toLocaleString('en-US')}`;
+            document.getElementById('cost-activities').innerText = `CHF ${activitiesTotal.toLocaleString('en-US')}`;
+
+            document.getElementById('total-budget-chf').innerText = `CHF ${totalChf.toLocaleString('en-US')}`;
+            document.getElementById('total-budget-idr').innerText = `Rp ${totalIdr.toLocaleString('id-ID')}`;
+        }
+
+        // Live FX Converter
+        function convertChfToIdr() {
+            const chfVal = parseFloat(document.getElementById('fx-chf-input').value) || 0;
+            const idrVal = Math.round(chfVal * currentFxRate);
+            document.getElementById('fx-idr-input').value = idrVal;
+        }
+
+        function convertIdrToChf() {
+            const idrVal = parseFloat(document.getElementById('fx-idr-input').value) || 0;
+            const chfVal = (idrVal / currentFxRate).toFixed(2);
+            document.getElementById('fx-chf-input').value = chfVal;
+        }
+
+        function updateCustomRate() {
+            const rateVal = parseFloat(document.getElementById('custom-rate-input').value);
+            if (rateVal && rateVal > 0) {
+                currentFxRate = rateVal;
+                document.getElementById('nav-fx-rate').innerText = currentFxRate.toLocaleString('id-ID');
+                convertChfToIdr();
+                calculatePassPrice();
+                updateBudgetCalc();
+            }
+        }
+
+        function resetFxRate() {
+            currentFxRate = 18200;
+            document.getElementById('custom-rate-input').value = 18200;
+            document.getElementById('nav-fx-rate').innerText = "18,200";
+            convertChfToIdr();
+            calculatePassPrice();
+            updateBudgetCalc();
+        }
+
+        // Consultation Modal Functions
+        function openConsultationModal() {
+            document.getElementById('consultation-modal').classList.remove('hidden');
+        }
+
+        function openConsultationModalWithPass() {
+            document.getElementById('modal-service-type').value = 'pass';
+            openConsultationModal();
+        }
+
+        function openConsultationModalWithTrain(trainName) {
+            document.getElementById('modal-service-type').value = 'train';
+            openConsultationModal();
+        }
+
+        function closeConsultationModal() {
+            document.getElementById('consultation-modal').classList.add('hidden');
+        }
+
+        function handleConsultationSubmit(e) {
+            e.preventDefault();
+            alert('Terima kasih! Permintaan konsultasi perjalanan Swiss Anda telah berhasil dikirim. Spesialis kami akan menghubungi Anda dalam waktu 1x24 jam.');
+            closeConsultationModal();
+        }
+    </script>
+</body>
+</html>
